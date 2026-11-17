@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="200" viewBox="0 0 820 200" role="img" aria-label="Four phases: Contract, Audit, Fix (max 3 rounds), Report">
+  <rect width="820" height="200" rx="20" fill="#0F172A"/>
+  <g font-family="ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <g>
+      <rect x="24" y="40" width="168" height="120" rx="14" fill="#1E1B3A" stroke="#8B5CF6"/>
+      <text x="108" y="76" font-size="13" font-weight="700" fill="#A78BFA" letter-spacing="1.5">A · BEFORE</text>
+      <text x="108" y="106" font-size="20" font-weight="800" fill="#F8FAFC">Contract</text>
+      <text x="108" y="134" font-size="13" fill="#CBD5E1">request quoted,</text>
+      <text x="108" y="152" font-size="13" fill="#CBD5E1">criteria frozen</text>
+    </g>
+    <g>
+      <rect x="226" y="40" width="168" height="120" rx="14" fill="#0C2A3A" stroke="#22D3EE"/>
+      <text x="310" y="76" font-size="13" font-weight="700" fill="#67E8F9" letter-spacing="1.5">B · AFTER</text>
+      <text x="310" y="106" font-size="20" font-weight="800" fill="#F8FAFC">Audit</text>
+      <text x="310" y="134" font-size="13" fill="#CBD5E1">no pass without</text>
+      <text x="310" y="152" font-size="13" fill="#CBD5E1">evidence</text>
+    </g>
+    <g>
+      <rect x="428" y="40" width="168" height="120" rx="14" fill="#3A1E12" stroke="#F97316"/>
+      <text x="512" y="76" font-size="13" font-weight="700" fill="#FDBA74" letter-spacing="1.5">C · IF NEEDED</text>
+      <text x="512" y="106" font-size="20" font-weight="800" fill="#F8FAFC">Fix</text>
+      <text x="512" y="134" font-size="13" fill="#CBD5E1">re-audit what</text>
+      <text x="512" y="152" font-size="13" fill="#CBD5E1">changed, max 3 rounds</text>
+    </g>
+    <g>
+      <rect x="630" y="40" width="168" height="120" rx="14" fill="#12301E" stroke="#22C55E"/>
+      <text x="714" y="76" font-size="13" font-weight="700" fill="#86EFAC" letter-spacing="1.5">D · END</text>
+      <text x="714" y="106" font-size="20" font-weight="800" fill="#F8FAFC">Report</text>
+      <text x="714" y="134" font-size="13" fill="#CBD5E1">evidence table,</text>
+      <text x="714" y="152" font-size="13" fill="#CBD5E1">honest status</text>
+    </g>
+    <g stroke="#64748B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M198 100 h22 M212 92 l8 8 l-8 8"/>
+      <path d="M400 100 h22 M414 92 l8 8 l-8 8"/>
+      <path d="M602 100 h22 M616 92 l8 8 l-8 8"/>
+    </g>
+    <path d="M512 166 q0 22 -100 22 t-102 -22" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M304 172 l6 -8 l6 8" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
