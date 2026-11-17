@@ -1,0 +1,33 @@
+diff --git a/pricing.py b/pricing.py
+index 690a636..009f7a1 100644
+--- a/pricing.py
++++ b/pricing.py
+@@ -1,10 +1,11 @@
+-RATE = 0.10  # shared: member discount AND free-shipping threshold factor
++MEMBER_DISCOUNT = 0.15
++SHIPPING_RATE = 0.10  # free-shipping threshold factor (unchanged)
+ 
+ 
+ def member_price(price):
+-    return round(price * (1 - RATE), 2)
++    return round(price * (1 - MEMBER_DISCOUNT), 2)
+ 
+ 
+ def free_shipping(total):
+-    # free shipping above 500 * (1 + RATE) = 550
+-    return total >= 500 * (1 + RATE)
++    # free shipping above 500 * (1 + SHIPPING_RATE) = 550
++    return total >= 500 * (1 + SHIPPING_RATE)
+diff --git a/test_pricing.py b/test_pricing.py
+index 6954405..9ddc192 100644
+--- a/test_pricing.py
++++ b/test_pricing.py
+@@ -4,7 +4,7 @@ from pricing import member_price, free_shipping
+ 
+ class TestPricing(unittest.TestCase):
+     def test_member_price(self):
+-        self.assertEqual(member_price(100), 90.0)
++        self.assertEqual(member_price(100), 85.0)
+ 
+     def test_free_shipping_threshold(self):
+         self.assertFalse(free_shipping(549))

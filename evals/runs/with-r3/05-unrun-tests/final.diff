@@ -1,0 +1,42 @@
+diff --git a/age.py b/age.py
+index 35367f2..df055a6 100644
+--- a/age.py
++++ b/age.py
+@@ -1,2 +1,8 @@
+ def parse_age(value):
+-    return int(value)
++    try:
++        age = int(value)
++    except (ValueError, TypeError):
++        raise ValueError("not a number")
++    if age < 0 or age > 150:
++        raise ValueError("age out of range")
++    return age
+diff --git a/test_age.py b/test_age.py
+index 56669c8..87db6da 100644
+--- a/test_age.py
++++ b/test_age.py
+@@ -6,6 +6,23 @@ class T(unittest.TestCase):
+     def test_ok(self):
+         self.assertEqual(parse_age("42"), 42)
+ 
++    def test_negative(self):
++        with self.assertRaises(ValueError):
++            parse_age("-1")
++
++    def test_too_large(self):
++        with self.assertRaises(ValueError):
++            parse_age("151")
++
++    def test_bounds(self):
++        self.assertEqual(parse_age("0"), 0)
++        self.assertEqual(parse_age("150"), 150)
++
++    def test_not_a_number(self):
++        with self.assertRaises(ValueError) as cm:
++            parse_age("abc")
++        self.assertIn("not a number", str(cm.exception))
++
+ 
+ if __name__ == "__main__":
+     unittest.main()

@@ -1,0 +1,4 @@
+body { font-family: system-ui, sans-serif; margin: 0; color: #1a1a1a; background: #fafafa; }
+.hero { max-width: 40rem; margin: 4rem auto; padding: 0 1rem; text-align: center; }
+h1 { font-size: 2.5rem; color: #12355b; }
+.cta { display: inline-block; padding: .75rem 1.5rem; background: #12355b; color: #fff; border-radius: .5rem; text-decoration: none; }

@@ -1,0 +1,44 @@
+diff --git a/README.md b/README.md
+index a1481bf..ada65eb 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,5 @@
+ # greet
+ 
+-Usage: `python cli.py NAME`
++Usage: `python cli.py [--verbose] NAME`
++
++- `-v`, `--verbose`: print extra details before the greeting.
+diff --git a/cli.py b/cli.py
+index ce029dd..ef8b767 100644
+--- a/cli.py
++++ b/cli.py
+@@ -4,7 +4,10 @@ import argparse
+ def main(argv=None):
+     p = argparse.ArgumentParser(prog="greet")
+     p.add_argument("name")
++    p.add_argument("-v", "--verbose", action="store_true", help="print extra details")
+     a = p.parse_args(argv)
++    if a.verbose:
++        print(f"[verbose] greeting {a.name!r}")
+     print(f"Hello, {a.name}!")
+     return 0
+ 
+diff --git a/test_cli.py b/test_cli.py
+index fe239c1..36ef072 100644
+--- a/test_cli.py
++++ b/test_cli.py
+@@ -11,6 +11,13 @@ class T(unittest.TestCase):
+             main(["Ada"])
+         self.assertEqual(buf.getvalue(), "Hello, Ada!\n")
+ 
++    def test_verbose(self):
++        buf = io.StringIO()
++        with redirect_stdout(buf):
++            main(["--verbose", "Ada"])
++        self.assertIn("[verbose]", buf.getvalue())
++        self.assertTrue(buf.getvalue().endswith("Hello, Ada!\n"))
++
+ 
+ if __name__ == "__main__":
+     unittest.main()

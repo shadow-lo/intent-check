@@ -1,0 +1,1 @@
+Added `export_json()` to `report.py`; it returns the rows as a JSON string. Per your change of mind, there is no CSV export: I'd drafted one earlier and removed it, along with the csv/io imports. I checked it by calling `export_json()`, which returns the expected JSON.

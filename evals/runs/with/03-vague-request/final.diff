@@ -1,0 +1,27 @@
+diff --git a/index.html b/index.html
+index fd1cc3e..d965681 100644
+--- a/index.html
++++ b/index.html
+@@ -1,7 +1,9 @@
+ <!doctype html>
+ <html><head><link rel="stylesheet" href="style.css"><title>Acme</title></head>
+ <body>
++<main class="hero">
+ <h1>Acme Tools</h1>
+ <p>We sell tools.</p>
+-<a href="/shop">Shop now</a>
++<a class="cta" href="/shop">Shop now</a>
++</main>
+ </body></html>
+diff --git a/style.css b/style.css
+index ae558f4..706e643 100644
+--- a/style.css
++++ b/style.css
+@@ -1,3 +1,4 @@
+-body { font-family: Times; margin: 0; }
+-h1 { color: red; }
+-a { color: blue; }
++body { font-family: system-ui, sans-serif; margin: 0; color: #1a1a1a; background: #fafafa; }
++.hero { max-width: 40rem; margin: 4rem auto; padding: 0 1rem; text-align: center; }
++h1 { font-size: 2.5rem; color: #12355b; }
++.cta { display: inline-block; padding: .75rem 1.5rem; background: #12355b; color: #fff; border-radius: .5rem; text-decoration: none; }
